@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Pricing Engine</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="logox.png" alt="Logo" class="logo">
+        
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Calculate Price</a>
+        </div>
+
+        <a href="#" class="login-btn">Login</a>
+    </nav>
+
+    <div class="welcome-banner">
+        <h1>Welcome to Cycle Pricing Engine</h1>
+        <p>Configure your perfect cycle and get an instant price estimate</p>
+    </div>
+    <div class="form-container">
+        <div class="form-header">
+            <svg xmlns="http://www.w3.org/2000/svg" class="calculator-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            <h2>Cycle Configuration</h2>
+        </div>
+        <form id="cycleForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="brand">Brand:</label>
+                    <select id="brand" name="brand" required>
+                        <option value="" disabled selected>Select Brand</option>
+                        <option value="Avon">Avon</option>
+                        <option value="Giant">Giant</option>
+                        <option value="Hero">Hero</option>
+                        <option value="Atlas">Atlas</option>
+                        <option value="Schwinn">Schwinn</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="frame">Frame Material:</label>
+                    <select id="frame" name="frame" required>
+                        <option value="" disabled selected>Select Frame Material</option>
+                        <option value="Steel">Steel ~ ₹200</option>
+                        <option value="Aluminum">Aluminum ~ ₹300</option>
+                        <option value="Carbon">Carbon Fiber ~ ₹800</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="handlebar">Handlebar Type:</label>
+                    <select id="handlebar" name="handlebar" required>
+                        <option value="" disabled selected>Select Handlebar Type</option>
+                        <option value="Flat">Flat  ~ ₹100</option>
+                        <option value="Riser">Riser ~ ₹120</option>
+                        <option value="Cruiser">Cruiser ~ ₹200</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="seating">Seating:</label>
+                    <select id="seating" name="seating" required>
+                        <option value="" disabled selected>Select Seating</option>
+                        <option value="Upright">Upright  ~ ₹100</option>
+                        <option value="Aero">Aero ~ ₹150</option>
+                        <option value="Climbing">Climbing ~ ₹200</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wheel">Wheel Type:</label>
+                    <select id="wheel" name="wheel" required>
+                        <option value="" disabled selected>Select Wheel Type</option>
+                        <option value="Spokes">Spokes Wheel ~ ₹150</option>
+                        <option value="Rim">Rim Wheel  ~ ₹200</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="breaks">Chain Assembly:</label>
+                    <select id="breaks" name="breaks" required>
+                        <option value="" disabled selected>Select Breaks</option>
+                        <option value="V-Brake">V-Brake ~ ₹250</option>
+                        <option value="Disc">Disc ~ ₹350</option>
+                        <option value="Cantilever">Cantilever ~ ₹400</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tyre">Tyres:</label>
+                    <select id="tyre" name="tyre" required>
+                        <option value="" disabled selected>Select Tyre Type</option>
+                        <option value="Tube">Tube Tyre ~ ₹100</option>
+                        <option value="TubeLess">TubeLess Tyre ~ ₹200 </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="chainAssembly">Chain Assembly:</label>
+                    <select id="chainAssembly" name="chainAssembly" required>
+                        <option value="" disabled selected>Select Chain Assembly</option>
+                        <option value="4">4 Gears ~ ₹150</option>
+                        <option value="6">6 Gears ~ ₹250</option>
+                        <option value="8">8 Gears ~ ₹350</option>
+                    </select>
+                </div>
+               
+            </div>
+
+            <div class="form-group full-width">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" placeholder="Write your comments here..." rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Calculate Price</button>
+        </form>
+        <div id="priceDisplay" class="price-display"></div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
